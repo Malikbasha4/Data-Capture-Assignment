@@ -1,0 +1,555 @@
+CREATE TABLE Location (
+    Location_id NUMBER(10) PRIMARY KEY,
+    City VARCHAR2(50),
+    State VARCHAR2(50),
+    Country VARCHAR2(50),
+    Zipcode VARCHAR2(10)
+);
+
+INSERT INTO location (location_id, city, state, country, zipcode)
+VALUES (1, 'Chennai', 'Tamil Nadu', 'India', 600001);
+INSERT INTO location (location_id, city, state, country, zipcode)
+VALUES (2, 'Madurai', 'Tamil Nadu', 'India', 625003);
+INSERT INTO location (location_id, city, state, country, zipcode)
+VALUES(3, 'Hyderabad', 'Telangana', 'India', 500032);
+INSERT INTO location (location_id, city, state, country, zipcode)
+VALUES(4, 'Mumbai', 'Maharashtra', 'India',  400001);
+INSERT INTO location (location_id, city, state, country, zipcode)
+VALUES(5, 'Houston', 'Texas', 'USA', 77042);
+INSERT INTO location (location_id, city, state, country, zipcode)
+VALUES(6, 'Bangalore', 'Karnataka', 'India', 560001);
+INSERT INTO location (location_id, city, state, country, zipcode)
+VALUES(7, 'New York City', 'New York', 'USA', 2116);
+INSERT INTO location (location_id, city, state, country, zipcode)
+VALUES(8, 'New Jersey', 'New Jersey', 'USA', 07938);
+INSERT INTO location (location_id, city, state, country, zipcode)
+VALUES(9, 'New Delhi', 'Delhi', 'India', 110001);
+INSERT INTO location (location_id, city, state, country, zipcode)
+VALUES(10, 'Berlin', 'Berlin', 'Germany', 10115);
+ 
+
+
+
+
+CREATE TABLE organization (
+    org_id NUMBER(6) PRIMARY KEY,
+    org_name VARCHAR2(30),
+    location_id NUMBER(10),
+    country VARCHAR2(20),
+    org_classification VARCHAR2(20),
+    CONSTRAINT fk_org_location FOREIGN KEY (location_id) REFERENCES Location(Location_id)
+);
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143901, 'DALMIA BHARAT CEMENT', 1, 'India', 'Manufacturing');
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143902, 'BHEL', 4, 'India', 'Engineering');
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143903, 'Apple Inc.', 7, 'USA', 'Technology');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143904, 'Honda Motors Pvt. Ltd.', 3, 'India', 'Automotive');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143905, 'TATA Chemical Ltd.', 2, 'India', 'Chemical');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143906, 'Indian Bank', 1, 'India', 'Finance');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143907, 'Policy Bazaar', 1, 'India', 'Insurance');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143908, 'Godrej Properties', 1, 'India', 'Real Estate');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143909, 'Visa India', 1, 'India', 'Finance');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143910, 'ITC Ltd.', 1, 'India', 'FMCG');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143911, 'ONGC', 1, 'India', 'Energy');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143912, 'Saudi Aramco', 5, 'USA', 'Energy');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143913, 'JSW Energy', 2, 'India', 'Energy');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143914, 'Tata Power', 1, 'India', 'Energy');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143915, 'Adobe Inc.', 2, 'USA', 'Technology');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143916, 'HTC Global Services',9, 'India', 'Technology');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143917, 'BSNL', 1, 'India', 'Telecommunications');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143918, 'Siemens Healthineers Ltd.', 10, 'Germany', 'Healthcare');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143919, 'Serum Institute of India', 1, 'India', 'Pharmaceuticals');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143920, 'Reliance Digital', 9, 'India', 'Retail');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143921, 'My Jio', 1, 'India', 'Telecommunications');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143922, 'Sun TV Networks', 1, 'India', 'Media');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143923, 'American Express Travel', 8, 'USA', 'Finance');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143924, 'Red Bull India', 1, 'India', 'Beverages');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143925, 'Tata Consumer Products', 6, 'India', 'FMCG');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143926, 'Dabur India Ltd.', 3, 'India', 'FMCG');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143927, 'Haier', 5, 'USA', 'Electronics');
+
+INSERT INTO organization (org_id, org_name, location_id, country, org_classification)
+VALUES (143928, 'Nike', 8, 'USA', 'Apparel');
+
+--emp
+CREATE TABLE employee (
+    org_id NUMBER(10),
+    employee_id NUMBER(10) PRIMARY KEY,
+    first_name VARCHAR2(200),
+    last_name VARCHAR2(100),
+    email_address VARCHAR2(100) UNIQUE,
+    phone_number NUMBER(20),
+    hire_date DATE,
+    employee_type VARCHAR2(100),
+    salary NUMBER(10),
+    account_number NUMBER(30),
+    location_id number,
+    country varchar2(20),
+    CONSTRAINT fk_org_location1 FOREIGN KEY (location_id) REFERENCES location(location_id),
+    CONSTRAINT fk_org_id FOREIGN KEY (org_id) REFERENCES organization (org_id)
+);
+
+
+
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES 
+(143901, 143950, 'vikram', 'prabu', 'vikram@gmail.com', 9876543210, TO_DATE('2023-10-09', 'YYYY-MM-DD'), 'Full-time', 60000, 6374110793143950, 1, 'India');
+insert into employee(org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+values
+(143902,143951,'suresh','raina','suresh@gmail.com',8976543210,to_date('2023-10-08','yyyy-mm-dd'),'full-time',70000,6374110793143951,4, 'India');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143903,143952,'ajith','kumar','ajith@gmail.com',8967543210,to_date('2023-10-08','yyyy-mm-dd'),'full-time',60000,6374110793143952,7, 'USA');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES 
+(143904,143953,'vijay','joshep','vijay@gmail.com',9867543210,to_date('2024-12-07','yyyy-mm-dd'),'remote-work',40000,6374110793143953,3, 'India');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143905,143954,'mick','john','mick@gmail.com',8967453210,to_date('2023-10-12','yyyy-mm-dd'),'full-time',50000,6374110793143954,2,'india');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143906, 143955, 'Olivia', 'Williams', 'olivia.williams@email.com', 1234567896, TO_DATE('2023-10-06', 'YYYY-MM-DD'), 'Full-time', 55000, 6374110793143955, 1, 'india');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143907, 143956, 'John', 'Doe', 'john.doe@email.com', 1234567890, TO_DATE('2023-10-09', 'YYYY-MM-DD'), 'Full-time', 55000, 6374110793143956, 1, 'india');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143908,143957,'Amit', 'Sharma', 'amit.sharma@email.com', 1234567894, TO_DATE('2023-10-12', 'YYYY-MM-DD'), 'Full-time', 60000, 6374110793143957, 1, 'India');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143909,143958,'Priya', 'Patel', 'priya.patel@email.com', 1234567895, TO_DATE('2023-10-13', 'YYYY-MM-DD'), 'Part-time', 45000, 6374110793143958, 1, 'India');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143910,143959,'Raj', 'Kumar', 'raj.kumar@email.com', 1234567896, TO_DATE('2023-10-14', 'YYYY-MM-DD'), 'Full-time', 55000, 6374110793143959, 1, 'India');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143911,143960,'Shalini', 'Sethi', 'shalini.sethi@email.com', 1234567897, TO_DATE('2023-10-15', 'YYYY-MM-DD'), 'Full-time', 60000, 6374110793143960, 1, 'India');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143912,143961,'Ravi', 'Verma', 'ravi.verma@email.com', 1234567898, TO_DATE('2023-10-16', 'YYYY-MM-DD'), 'Part-time', 45000, 6374110793143961, 5, 'USA');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143913,143962,'Neha', 'Gupta', 'neha.gupta@email.com', 1234567899, TO_DATE('2023-10-17', 'YYYY-MM-DD'), 'Full-time', 55000, 6374110793143962, 2, 'India');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143914,143963,'Rahul', 'Shah', 'rahul.shah@email.com', 1234567800, TO_DATE('2023-10-18', 'YYYY-MM-DD'), 'Full-time', 60000, 1234567890123463, 1, 'India');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143915,143964,'Komal', 'Jain', 'komal.jain@email.com', 1234567801, TO_DATE('2023-10-19', 'YYYY-MM-DD'), 'Part-time', 45000, 6374110793143964, 2, 'USA');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143916,143965,'Vasu', 'Singh', 'vivek.singh@email.com', 1234567802, TO_DATE('2023-10-20', 'YYYY-MM-DD'), 'Full-time', 55000, 6374110793143965, 9, 'India');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143917,143966,'Sneha', 'Yadav', 'sneha.yadav@email.com', 1234567803, TO_DATE('2023-10-21', 'YYYY-MM-DD'), 'Full-time', 60000, 6374110793143966, 1, 'India');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143918,143967,'Aryan', 'Garg', 'aryan.garg@email.com', 1234567804, TO_DATE('2023-10-22', 'YYYY-MM-DD'), 'Part-time', 45000, 6374110793143967, 10, 'Germany');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143919,143968,'Priyanka', 'Kaur', 'priyanka.kaur@email.com', 1234567805, TO_DATE('2023-10-23', 'YYYY-MM-DD'), 'Full-time', 55000, 6374110793143968, 1, 'India');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143920,143969,'Rahul', 'Malhotra', 'rahul.malhotra@email.com', 1234567806, TO_DATE('2023-10-24', 'YYYY-MM-DD'), 'Full-time', 60000, 6374110793143969, 9, 'India');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143921,143970,'Simran', 'Kapoor', 'simran.kapoor@email.com', 1234567807, TO_DATE('2023-10-25', 'YYYY-MM-DD'), 'Part-time', 45000, 6374110793143970, 1, 'India');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143922,143971,'Rajat', 'Bansal', 'rajat.bansal@email.com', 1234567808, TO_DATE('2023-10-26', 'YYYY-MM-DD'), 'Full-time', 55000, 6374110793143971, 1, 'India');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143923,143972,'Pooja', 'Sharma', 'pooja.sharma@email.com', 1234567809, TO_DATE('2023-10-27', 'YYYY-MM-DD'), 'Full-time', 60000, 6374110793143972, 8, 'USA');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143924,143973,'Arun', 'Gupta', 'arun.gupta@email.com', 1234567810, TO_DATE('2023-10-28', 'YYYY-MM-DD'), 'Part-time', 45000, 6374110793143973, 1, 'India');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143925,143974,'Neha', 'Shah', 'neha.shah@email.com', 1234567811, TO_DATE('2023-10-29', 'YYYY-MM-DD'), 'Full-time', 55000, 6374110793143974, 6, 'India');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143926,143975,'Ravi', 'Yadav', 'ravi.yadav@email.com', 1234567812, TO_DATE('2023-10-30', 'YYYY-MM-DD'), 'Full-time', 60000, 6374110793143975, 3, 'India');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES
+(143927,143976,'Komal', 'Sethi', 'komal.sethi@email.com', 1234567813, TO_DATE('2023-10-31', 'YYYY-MM-DD'), 'Part-time', 45000, 6374110793143976, 5, 'USA');
+INSERT INTO employee (org_id, employee_id, first_name, last_name, email_address, phone_number, hire_date, employee_type, salary, account_number, location_id, country)
+VALUES (143928, 143977, 'Jane', 'Smith', 'jane.smith@email.com', 1234567890, TO_DATE('2023-10-09', 'YYYY-MM-DD'), 'Full-time', 55000, 6374110793143977, 8, 'USA');
+
+--customer
+create table customer(
+org_id number(10),
+customer_id number(10) primary key,
+customer_name varchar2(50),
+customer_type Varchar2(20),
+customer_account_number NUMBER(15),
+email_address varchar2(100) UNIQUE,
+phone_num number(15)UNIQUE,
+address varchar2(255),
+Location_id number(10),---fetch city,state,country from location table
+CONSTRAINT fk_org_id_cust FOREIGN KEY (org_id) REFERENCES organization (org_id),
+CONSTRAINT FK_LOC_ID_cust FOREIGN KEY (Location_id) REFERENCES LOCATION (Location_id)
+);
+
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143901,3901,'Jessica Davis', 'VIP', 63741107933901, 'jessica@email.com', 9799012345, '345 Cedar Ln, Hyderabad, Telangana, India', 3);
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143902,3902,'Matthew Wilson', 'Regular', 63741107933902, 'matthew.wilson@email.com', 7890123456, '456 Willow Dr, Madurai, Tamil Nadu, India', 2);
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143903,3903,'Olivia Taylor', 'VIP', 63741107933903, 'olivia.taylor@email.com', 8901234567, '567 Elm Rd, Chennai, Tamil Nadu, India', 1);
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143904,3904,'William Anderson', 'Regular', 63741107933904, 'william.anderson@email.com', 9012345678, '678 Maple Ave, Newyork, USA', 7);
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143905,3905,'Sophia Martinez', 'VIP', 63741107933905, 'sophia.martinez@email.com', 0123456789, '789 Oak Rd,Maple Ave, Houston, Texas , USA', 5);
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143906,3906,'Liam Johnson', 'Regular', 63741107933906, 'liam.johnson@email.com', 1234567890, '123 Pine St, Bangalore, Karnataka, India', 6);
+
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143907,3907,'Emma Davis', 'VIP', 63741107933907, 'emma.davis@email.com', 2345678901, '456 Oak Rd, New Delhi, Delhi, India', 9);
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143908,3908,'Noah Williams', 'Regular',63741107933908, 'noah.williams@email.com', 3456789012, '789 Maple Ave, Chennai, Tamil Nadu, India', 1);
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143909,3909,'Olivia Smith', 'VIP', 63741107933909, 'olivia.smith@email.com', 4567890123, '012 Birch Dr, New Delhi, Delhi, India', 9);
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143910,3910,'Michael Johnson', 'VIP', 63741107933910, 'michael.johnson@email.com', 5678901235, '234 Oak Rd, Bangalore, Karnataka, India', 6);
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143911,3911,'Ella Davis', 'Regular', 63741107933911, 'ella.davis@email.com', 6789012347, '345 Elm Rd, New Delhi, Delhi, India', 9);
+
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143912,3912,'Mia Davis', 'VIP', 63741107933912, 'mia.davis@email.com', 8901234568, '567 Willow Dr, Mumbai, Maharashtra, India', 4);
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143913,3913, 'Ethan Wilson', 'Regular',63741107933913, 'ethan.wilson@email.com', 9012345679, '678 Cedar Ln, Chennai, Tamil Nadu, India', 1);
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143914,3914,'Ava Davis', 'VIP', 63741107933914, 'ava.davis@email.com', 0123456790, '789 Elm Rd, Bangalore, Karnataka, India', 6);
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143915,3915,'Lucas Wilson', 'Regular', 63741107933915, 'lucas.wilson@email.com', 1234567891, '456 Pine Dr, Chennai, Tamil Nadu, India', 1);
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143916,3916,'Mia Taylor', 'VIP', 63741107933916, 'mia.taylor@email.com', 2345678902, '567 Maple Ave, Bangalore, Karnataka, India', 6);
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143917,3917,'Ethan Johnson', 'Regular', 63741107933917, 'ethan.johnson@email.com', 5678901234, '234 Cedar Ln, Chennai, Tamil Nadu, India', 1);
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143918,3918,'Ravichandran Ashwin', 'Regular', 63741107933918, 'ravichandran.ashwin@email.com', 7890123457, '456 Elm Rd, Houston, Texas, USA', 5);
+
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143919,3919, 'Rohit Sharma', 'Regular', 63741107933919, 'rohit.sharma@email.com', 7890123458, '456 Elm Rd, Hyderabad, Telangana, India', 3);
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143920,3920,'KL Rahul', 'VIP', 63741107933920, 'kl.rahul@email.com', 8901234569, '567 Cedar Ln, Chennai, Tamil Nadu, India', 1);
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143921,3921,'Marco Reus', 'VIP', 63741107933921, 'marco.reus@email.com', 9012345681, '789 Oak Rd, Dortmund, Germany', 10);
+
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143922,3922,'Timo Werner', 'VIP', 63741107933922, 'timo.werner@email.com', 9012345682, '789 Maple Ave, Leipzig, Germany', 10);
+
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143923,3923,'Sunil Chhetri', 'Regular', 63741107933923, 'sunil.chhetri@email.com', 9234567891, '123 Pine St, Bangalore, Karnataka, India', 6);
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143924,3924, 'Rishabh Pant', 'VIP', 63741107933924, 'rishabh.pant@email.com', 9234567892, '234 Birch Dr, New Delhi, Delhi, India', 9);
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143925,3925, 'Karthik Nayar', 'VIP', 63741107933925, 'karthik.nayar@email.com', 9234567893, '456 Oak Rd, Chennai, Tamil Nadu, India', 1);
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143926,3926,'Sophia Wilson', 'VIP', 63741107933926, 'sophia.wilson@email.com', 4567890124, '789 Pine St, Mumbai, Maharashtra, India', 4);
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143927,3927,'Liam Smith', 'Regular', 63741107933927, 'liam.smith@email.com', 3456789013, '678 Cedar Ln, Chennai, Tamil Nadu, India', 1);
+INSERT INTO customer (org_id, customer_id, customer_name, customer_type, customer_account_number, email_address, phone_num, address, Location_id)
+VALUES
+(143928,3928,'Toni Kroos', 'Regular', 63741107933928, 'toni.kroos@email.com', 6789012348, '123 Willow Dr, Munich, Germany', 10);
+
+
+--supplier
+create table supplier(
+org_id number(10),
+supplier_id number(10) primary key,
+supplier_name varchar2(30),
+supplier_mail varchar2(30) unique,
+supplier_contact number(15)UNIQUE,
+Location_id number(10),
+supplier_type varchar2(30),
+date_of_purachase date,
+account_number number(15) UNIQUE,
+bank_name varchar2(30),
+Constraint fk_organization_supplier foreign key (org_id) references organization(org_id),
+CONSTRAINT FK_LOC_ID_SUPPLIER FOREIGN KEY (Location_id) REFERENCES LOCATION (Location_id)
+);
+
+-- For DALMIA BHARAT CEMENT (org_id: 143901, location_id: 1, country: India)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143901, 39100, 'CementPro Inc.', 'cementpro@gmail.com', 9876543222, 1, 'Cement', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339100, 'Indian Bank');
+
+-- For BHEL (org_id: 143902, location_id: 4, country: India)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143902, 39101, 'Techtronix Solutions', 'techtronix@gmail.com', 9876543223, 4, 'Engineering Components', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339101, 'SBI Bank');
+
+-- For Apple Inc. (org_id: 143903, location_id: 7, country: USA)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143903, 39102, 'ChipTech Electronics', 'chiptech@gmail.com', 9876543224, 7, 'Semiconductors', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339102, 'Bank of America');
+
+-- For Honda Motors Pvt. Ltd. (org_id: 143904, location_id: 3, country: India)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143904, 39103, 'AutoParts International', 'autoparts@gmail.com', 9876543225, 3, 'Automotive Components', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339103, 'Canara Bank');
+
+-- For TATA Chemical Ltd. (org_id: 143905, location_id: 2, country: India)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143905, 39104, 'ChemiSol Industries', 'chemisol@gmail.com', 9876543226, 2, 'Chemical Compounds', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339104, 'Deutsche Bank');
+-- For Indian Bank (org_id: 143906, location_id: 1, country: India)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143906, 39105, 'Financity Consulting', 'financity@gmail.com', 9876543227, 1, 'Financial Services', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339105, 'JPMorgan Chase');
+
+-- For Policy Bazaar (org_id: 143907, location_id: 1, country: India)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143907, 39106, 'InsureTech Solutions', 'insuretech@gmail.com', 9876543228, 1, 'Insurance Services', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339106, 'Deutsche Bank');
+
+-- For Godrej Properties (org_id: 143908, location_id: 1, country: India)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143908, 39107, 'BuildMaster Construction', 'buildmaster@gmail.com', 9876543229, 1, 'Construction Materials', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339107, 'Indian Bank');
+
+-- For Visa India (org_id: 143909, location_id: 1, country: India)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143909, 39108, 'PaymentTech Solutions', 'paymenttech@gmail.com', 9876543230, 1, 'Payment Systems', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339108, 'SBI Bank');
+
+-- For ITC Ltd. (org_id: 143910, location_id: 1, country: India)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143910, 39109, 'AgroFoods Industries', 'agrofoods@gmail.com', 9876543231, 1, 'Food Products', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339109, 'Bank of America');
+
+-- For ONGC (org_id: 143911, location_id: 1, country: India)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143911, 39110, 'EnergyDrill Technologies', 'energydrill@gmail.com', 9876543432, 1, 'Drilling Equipment', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339110, 'Canara Bank');
+
+-- For Saudi Aramco (org_id: 143912, location_id: 5, country: USA)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143912, 39111, 'PetroChem Solutions', 'petrochem@gmail.com', 9876540233, 5, 'Chemical Supplies', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339111, 'Deutsche Bank');
+
+-- For JSW Energy (org_id: 143913, location_id: 2, country: India)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143913, 39112, 'PowerGen Equipment', 'powergen@gmail.com', 9876543274, 2, 'Energy Equipment', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339112, 'JPMorgan Chase');
+-- For Tata Power (org_id: 143914, location_id: 1, country: India)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143914, 39113, 'PowerGrid Solutions', 'powergrid@gmail.com', 9876542350, 1, 'Electrical Components', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339113, 'Bank of America');
+
+-- For Adobe Inc. (org_id: 143915, location_id: 2, country: USA)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143915,39114,'DesignTech Studios', 'designtech@gmail.com', 8899527632,2, 'Design Software', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339114, 'Canara Bank');
+
+-- For HTC Global Services (org_id: 143916, location_id: 9, country: India)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143916, 39115, 'InnovateTech Solutions', 'innovatetech@gmail.com', 9876903237, 9, 'IT Services', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339115, 'JPMorgan Chase');
+
+-- For BSNL (org_id: 143917, location_id: 1, country: India)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143917, 39116, 'CommuNet Systems', 'communet@gmail.com', 9876543768, 1, 'Telecom Equipment', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339116, 'Deutsche Bank');
+
+-- For Siemens Healthineers Ltd. (org_id: 143918, location_id: 10, country: Germany)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143918, 39117, 'MedTech Innovations', 'medtech@gmail.com', 9875438790, 10, 'Medical Equipment', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339117, 'Indian Bank');
+-- For Serum Institute of India (org_id: 143919, location_id: 1, country: India)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143919, 39118, 'PharmaBulk Suppliers', 'pharmabulk@gmail.com', 9876543240, 1, 'Pharmaceutical Ingredients', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339118, 'SBI Bank');
+
+-- For Reliance Digital (org_id: 143920, location_id: 9, country: India)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143920, 39119, 'ElectroMart Solutions', 'electromart@gmail.com', 9876543241, 9, 'Electronics Retail', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339119, 'Bank of America');
+
+-- For My Jio (org_id: 143921, location_id: 1, country: India)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143921, 39120, 'TeleCom Solutions', 'telecomsolutions@gmail.com', 9876543242, 1, 'Telecom Services', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339120, 'Canara Bank');
+
+-- For Sun TV Networks (org_id: 143922, location_id: 1, country: India)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143922, 39121, 'MediaLink Productions', 'medialink@gmail.com', 9876543243, 1, 'Media Content', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339121, 'JPMorgan Chase');
+
+-- For American Express Travel (org_id: 143923, location_id: 8, country: USA)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143923, 39122, 'TravelNet Services', 'travelnet@gmail.com', 9876543244, 8, 'Travel Services', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339122, 'Deutsche Bank');
+-- For Red Bull India (org_id: 143924, location_id: 1, country: India)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143924, 39123, 'EnergyBev Distributors', 'energybev@gmail.com', 9876543245, 1, 'Beverage Ingredients', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339123, 'Bank of America');
+
+-- For Tata Consumer Products (org_id: 143925, location_id: 6, country: India)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143925, 39124, 'FMCGMart Distributors', 'fmcgmart@gmail.com', 9876543246, 6, 'Fast-Moving Consumer Goods', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339124, 'Canara Bank');
+
+-- For Dabur India Ltd. (org_id: 143926, location_id: 3, country: India)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143926, 39125, 'HerbalEssentials', 'herbalessentials@gmail.com', 9876543247, 3, 'Herbal Products', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339125, 'JPMorgan Chase');
+
+-- For Haier (org_id: 143927, location_id: 5, country: USA)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143927, 39126, 'TechGizmo Electronics', 'techgizmo@gmail.com', 9876543248, 5, 'Electronic Components', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339126, 'Deutsche Bank');
+
+-- For Nike (org_id: 143928, location_id: 8, country: USA)
+INSERT INTO supplier (org_id, supplier_id, supplier_name, supplier_mail, supplier_contact, Location_id, supplier_type, date_of_purachase, account_number, bank_name)
+VALUES (143928, 39127, 'SportFashion Inc.', 'sportfashion@gmail.com', 9876543249, 8, 'Sportswear', TO_DATE('2023-10-09', 'YYYY-MM-DD'), 637411079339127, 'SBI Bank');
+
+--bank
+create table bank (
+    Org_id number(10),
+    Bank_id number(10)Primary key,
+    Bank_name VARCHAR2(50),
+    Classification_type VARCHAR2(20),
+    Account_type varchar2(50),
+    account_num number(15) unique,
+    Acc_Balance NUMBER(20),
+    Location_ID number(10),
+    CONSTRAINT fk_organization FOREIGN KEY (Org_id) REFERENCES organization(org_id),
+    CONSTRAINT FK_LOC_ID_BANK FOREIGN KEY (Location_id) REFERENCES LOCATION (Location_id) );
+    
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143901,43901,'Indian Bank','Supplier','current account',637411079339100,50000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143902,43902,'SBI Bank','Supplier','current account',637411079339101,18000,4);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143903,43903,'Bank of America','Supplier','current account',637411079339102,22000,7);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143904,43904,'Canara Bank','Supplier','current account',637411079339103,40000,3);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143905,43905,'Deutsche Bank','Supplier','current account',637411079339104,33000,2);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143906,43906,'JPMorgan Chase','Supplier','current account',637411079339105,30000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143907,43907,'Deutsche Bank','Supplier','current account',637411079339106,25000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143908,43908,'Indian Bank','Supplier','current account',637411079339107,60000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143909,43909,'SBI Bank','Supplier','current account',637411079339108,49000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143910,43910,'Bank of America','Supplier','current account',637411079339109,50000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143911,43911,'Canara Bank','Supplier','current account',637411079339110,18000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143912,43912,'Deutsche Bank','Supplier','current account',637411079339111,22000,5);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143913,43913,'JPMorgan Chase','Supplier','current account',637411079339112,40000,2);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143914,43914,'Bank of America','Supplier','current account',637411079339113,33000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143915,43915,'Canara Bank','Supplier','current account',637411079339114,30000,2);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143916,43916,'JPMorgan Chase','Supplier','current account',637411079339115,25000,9);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143917,43917,'Deutsche Bank','Supplier','current account',637411079339116,60000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143918,43918,'Indian Bank','Supplier','current account',637411079339117,49000,10);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143919,43919,'SBI Bank','Supplier','current account',637411079339118,50000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143920,43920,'Bank of America','Supplier','current account',637411079339119,18000,9);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143921,43921,'Canara Bank','Supplier','current account',637411079339120,22000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143922,43922,'JPMorgan Chase','Supplier','current account',637411079339121,40000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143923,43923,'Deutsche Bank','Supplier','current account',637411079339122,33000,8);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143924,43924,'Bank of America','Supplier','current account',637411079339123,30000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143925,43925,'Canara Bank','Supplier','current account',637411079339124,25000,6);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143926,43926,'JPMorgan Chase','Supplier','current account',637411079339125,60000,3);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143927,43927,'Deutsche Bank','Supplier','current account',637411079339126,49000,5);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143928,43928,'SBI Bank','Supplier','current account',637411079339127,50000,8);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143901,43929,'Indian Bank','Customer','current account',63741107933901,18000,3);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143902,43930,'SBI Bank','Customer','current account',63741107933902,22000,2);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143903,43931,'Bank of America','Customer','current account',63741107933903,40000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143904,43932,'Canara Bank','Customer','current account',63741107933904,33000,7);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143905,43933,'Deutsche Bank','Customer','current account',63741107933905,30000,5);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143906,43934,'JPMorgan Chase','Customer','current account',63741107933906,25000,6);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143907,43935,'Deutsche Bank','Customer','current account',63741107933907,60000,9);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143908,43936,'Indian Bank','Customer','current account',63741107933908,49000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143909,43937,'SBI Bank','Customer','current account',63741107933909,50000,9);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143910,43938,'Bank of America','Customer','current account',63741107933910,18000,6);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143911,43939,'Canara Bank','Customer','current account',63741107933911,22000,9);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143912,43940,'Deutsche Bank','Customer','current account',63741107933912,40000,4);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143913,43941,'JPMorgan Chase','Customer','current account',63741107933913,33000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143914,43942,'Bank of America','Customer','current account',63741107933914,30000,6);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143915,43943,'Canara Bank','Customer','current account',63741107933915,25000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143916,43944,'JPMorgan Chase','Customer','current account',63741107933916,60000,6);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143917,43945,'Deutsche Bank','Customer','current account',63741107933917,49000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143918,43946,'Indian Bank','Customer','current account',63741107933918,50000,5);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143919,43947,'SBI Bank','Customer','current account',63741107933919,18000,3);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143920,43948,'Bank of America','Customer','current account',63741107933920,22000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143921,43949,'Canara Bank','Customer','current account',63741107933921,40000,10);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143922,43950,'JPMorgan Chase','Customer','current account',63741107933922,33000,10);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143923,43951,'Deutsche Bank','Customer','current account',63741107933923,30000,6);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143924,43952,'Bank of America','Customer','current account',63741107933924,25000,9);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143925,43953,'Canara Bank','Customer','current account',63741107933925,60000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143926,43954,'JPMorgan Chase','Customer','current account',63741107933926,49000,4);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143927,43955,'Deutsche Bank','Customer','current account',63741107933927,50000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143928,43956,'SBI Bank','Customer','current account',63741107933928,18000,4);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143901,43957,'Indian Bank','Employee','salary account',637411079143950,22000,7);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143902,43958,'SBI Bank','Employee','salary account',637411079143951,40000,3);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143903,43959,'Bank of America','Employee','salary account',637411079314952,33000,2);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143904,43960,'Canara Bank','Employee','salary account',637411079371953,30000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143905,43961,'Deutsche Bank','Employee','salary account',637411079457454,25000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143906,43962,'JPMorgan Chase','Employee','salary account',637411079542955,60000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143907,43963,'Deutsche Bank','Employee','salary account',637411079628456,49000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143908,43964,'Indian Bank','Employee','salary account',637411079713957,50000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143909,43965,'SBI Bank','Employee','salary account',637411079799458,18000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143910,43966,'Bank of America','Employee','salary account',637411079884959,22000,5);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143911,43967,'Canara Bank','Employee','salary account',637411079970460,40000,2);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFsICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143912,43968,'Deutsche Bank','Employee','salary account',637411080055961,33000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143913,43969,'JPMorgan Chase','Employee','salary account',637411080141462,30000,2);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143914,43970,'Bank of America','Employee','salary account',637411080226963,25000,9);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143915,43971,'Canara Bank','Employee','salary account',637411080312464,60000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143916,43972,'JPMorgan Chase','Employee','salary account',637411080397965,49000,10);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143917,43973,'Deutsche Bank','Employee','salary account',637411080483466,50000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143918,43974,'Indian Bank','Employee','salary account',637411080568967,18000,9);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143919,43975,'SBI Bank','Employee','salary account',637411080654468,22000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143920,43976,'Bank of America','Employee','salary account',637411080739969,40000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143921,43977,'Canara Bank','Employee','salary account',637411080825470,33000,8);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143922,43978,'JPMorgan Chase','Employee','salary account',637411080910971,30000,1);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143923,43979,'Deutsche Bank','Employee','salary account',637411080996472,25000,6);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143924,43980,'Bank of America','Employee','salary account',637411081081973,60000,3);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143925,43981,'Canara Bank','Employee','salary account',637411081167474,49000,5);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143926,43982,'JPMorgan Chase','Employee','salary account',637411081252975,50000,8);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143927,43983,'Deutsche Bank','Employee','salary account',637411081338476,18000,null);
+Insert into BANK (ORG_ID,BANK_ID,BANK_NAME,CLASSIFICATION_TYPE,ACCOUNT_TYPE,ACCOUNT_NUM,ACC_BALANCE,LOCATION_ID) values (143928,43984,'SBI Bank','Employee','salary account',637411081423977,22000,null);
